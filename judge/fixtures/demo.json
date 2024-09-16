@@ -167,7 +167,7 @@
     {
         "fields": {
             "domain": "localhost:8081",
-            "name": "VNOJ: Viet Nam Online Judge"
+            "name": "CKTOJ: THPT Chuyen Nguyen Tat Thanh Online Judge"
         },
         "model": "sites.site",
         "pk": 1
