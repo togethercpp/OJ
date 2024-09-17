@@ -421,6 +421,12 @@ urlpatterns = [
     ])),
 
     path('magazine/', MagazinePage.as_view(), name='magazine'),
+    path(r'^import_users/', include([
+        path(r'^$', user.ImportUsersView.as_view(), name='import_users'),
+        path(r'post_file/$', user.import_users_post_file, name='import_users_post_file'),
+        path(r'submit/$', user.import_users_submit, name='import_users_submit'),
+        path(r'sample/$', user.sample_import_users, name='import_users_sample')
+    ])),
 ]
 
 favicon_paths = ['apple-touch-icon-180x180.png', 'apple-touch-icon-114x114.png', 'android-chrome-72x72.png',

@@ -20,7 +20,7 @@ from django.db.models.expressions import Value
 from django.db.models.fields import DateField
 from django.db.models.functions import Cast, Coalesce, ExtractYear
 from django.forms import Form
-from django.http import Http404, HttpResponse, HttpResponseRedirect, JsonResponse
+from django.http import Http404, HttpResponseRedirect, JsonResponse, HttpResponseForbidden, HttpResponseBadRequest, HttpResponse
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.utils import timezone
@@ -31,6 +31,7 @@ from django.utils.safestring import mark_safe
 from django.utils.translation import gettext as _, gettext_lazy
 from django.views.decorators.http import require_POST
 from django.views.generic import DetailView, FormView, ListView, TemplateView, View
+from django.template.loader import render_to_string
 from reversion import revisions
 
 from judge.forms import CustomAuthenticationForm, ProfileForm, UserBanForm, UserDownloadDataForm, UserForm, \
@@ -40,6 +41,7 @@ from judge.models import Comment
 from judge.performance_points import get_pp_breakdown
 from judge.ratings import rating_class, rating_progress
 from judge.tasks import prepare_user_data
+from judge.tasks import import_users
 from judge.utils.celery import task_status_by_id, task_status_url_by_id
 from judge.utils.infinite_paginator import InfinitePaginationMixin
 from judge.utils.problems import contest_completed_ids, user_completed_ids
@@ -47,7 +49,7 @@ from judge.utils.pwned import PwnedPasswordsValidator
 from judge.utils.ranker import ranker
 from judge.utils.subscription import Subscription
 from judge.utils.unicode import utf8text
-from judge.utils.views import DiggPaginatorMixin, QueryStringSortMixin, SingleObjectFormView, TitleMixin, \
+from judge.utils.views import DiggPaginatorMixin, QueryStringSortMixin, SingleObjectFormView, TitleMixin, SingleObjectFormView \
     add_file_response, generic_message
 from judge.views.blog import PostListBase
 from .contests import ContestRanking
@@ -689,6 +691,57 @@ class UserLogoutView(TitleMixin, TemplateView):
         auth_logout(request)
         return HttpResponseRedirect(request.get_full_path())
 
+class ImportUsersView(TitleMixin, TemplateView):
+    template_name = 'user/import/index.html'
+    title = _('Import Users')
+
+    def get(self, *args, **kwargs):
+        if self.request.user.is_superuser:
+            return super().get(self, *args, **kwargs)
+        return HttpResponseForbidden()
+
+
+def import_users_post_file(request):
+    if not request.user.is_superuser or request.method != 'POST':
+        return HttpResponseForbidden()
+    users = import_users.csv_to_dict(request.FILES['csv_file'])
+
+    if not users:
+        return JsonResponse({
+            'done': False,
+            'msg': 'No valid row found. Make sure row containing username.'
+        })
+
+    table_html = render_to_string('user/import/table_csv.html', {
+                    'data': users
+                })
+    return JsonResponse({
+        'done': True,
+        'html': table_html,
+        'data': users
+    })
+
+
+def import_users_submit(request):
+    import json
+    if not request.user.is_superuser or request.method != 'POST':
+        return HttpResponseForbidden()
+
+    users = json.loads(request.body)['users']
+    log = import_users.import_users(users)
+    return JsonResponse({
+        'msg': log     
+    })
+
+
+def sample_import_users(request):
+    if not request.user.is_superuser or request.method != 'GET':
+        return HttpResponseForbidden()
+    filename = 'import_sample.csv'
+    content = ','.join(import_users.fields) + '\n' + ','.join(import_users.descriptions)
+    response = HttpResponse(content, content_type='text/plain')
+    response['Content-Disposition'] = 'attachment; filename={0}'.format(filename)
+    return response
 
 class CustomPasswordResetView(PasswordResetView):
     title = gettext_lazy('Password reset')
