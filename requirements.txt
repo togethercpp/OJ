@@ -9,6 +9,7 @@ django-sortedm2m>=3.1.0
 django-impersonate
 django-redis
 mysqlclient
+setuptools
 dmoj-wpadmin @ git+https://github.com/DMOJ/dmoj-wpadmin.git
 lxml[html_clean]
 lxml_html_clean
@@ -16,6 +17,7 @@ Pygments<2.12
 mistune<2
 social-auth-core==4.3.0
 social-auth-app-django==5.0.0
+websocket-client
 pytz
 django-statici18n
 pika
