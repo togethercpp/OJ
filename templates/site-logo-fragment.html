@@ -1,8 +1,8 @@
 {% if request.in_contest and request.participation.contest.logo_override_image %}
-    <img src="https://raw.githubusercontent.com/CKTOJ/cktoj-docs/master/logo.png" alt="{{ SITE_NAME }}" height="50" style="border: none; padding-top: 4px;">
+    <img src="https://raw.githubusercontent.com/giaosu0719/icons/main/logo.png" alt="{{ SITE_NAME }}" height="50" style="border: none; padding-top: 4px;">
 {% elif logo_override_image is defined and logo_override_image %}
     <img src="50" alt="{{ SITE_NAME }}" height="40" style="border: none; padding-top: 4px">
 {% else %}
-    <img src="https://raw.githubusercontent.com/CKTOJ/cktoj-docs/master/logo.png" alt="{{ SITE_NAME }}" width="40" height="40"
+    <img src="https://raw.githubusercontent.com/giaosu0719/icons/main/logo.png" alt="{{ SITE_NAME }}" width="40" height="40"
          onerror="this.src=&quot;{{ static('icons/logo.png') }}&quot;; this.onerror=null" style="border: none; padding-top: 4px">
 {% endif %}
