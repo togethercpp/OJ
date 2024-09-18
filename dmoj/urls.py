@@ -421,7 +421,7 @@ urlpatterns = [
     ])),
 
     path('magazine/', MagazinePage.as_view(), name='magazine'),
-    path(r'^import_users/', include([
+    path(r'import_users/', include([
         path(r'', user.ImportUsersView.as_view(), name='import_users'),
         path(r'post_file/', user.import_users_post_file, name='import_users_post_file'),
         path(r'submit/', user.import_users_submit, name='import_users_submit'),
