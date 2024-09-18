@@ -193,7 +193,7 @@
         "fields": {
             "url": "/about/",
             "title": "Th\u00f4ng tin",
-            "content": "test abcd",
+            "content": "CKTOJ: Chuy\u00ean Kon Tum Online Judge l\u00e0 h\u1ec7 th\u1ed1ng online judge ch\u00ednh th\u1ee9c c\u1ee7a Tr\u01b0\u1eddng THPT Chuy\u00ean Nguy\u1ec5n T\u1ea5t Th\u00e0nh - Kon Tum, \u0111\u01b0\u1ee3c x\u00e2y d\u1ef1ng d\u1ef1a tr\u00ean c\u00e1c d\u1ef1 \u00e1n m\u00e3 ngu\u1ed3n m\u1edf [DMOJ](https://dmoj.ca/) v\u00e0 [VNOJ](https://oj.vnoi.info/).CKTOJ \u0111\u01b0\u1ee3c t\u1ea1o ra v\u1edbi m\u1ee5c \u0111\u00edch x\u00e2y d\u1ef1ng m\u1ed9t m\u00f4i tr\u01b0\u1eddng luy\u1ec7n t\u1eadp v\u00e0 c\u1ea1nh tranh d\u00e0nh cho c\u1ed9ng \u0111\u1ed3ng Tin H\u1ecdc c\u1ee7a t\u1ec9nh Kon Tum.",
             "enable_comments": false,
             "template_name": "",
             "registration_required": false,
