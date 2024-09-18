@@ -81,91 +81,6 @@
     },
     {
         "fields": {
-            "ac_rate": 0.0,
-            "allowed_languages": [
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7,
-                8,
-                9,
-                10
-            ],
-            "authors": [
-                1
-            ],
-            "banned_users": [
-
-            ],
-            "code": "aplusb",
-            "curators": [
-
-            ],
-            "date": "2017-12-02T05:00:00Z",
-            "description": "Tudor is sitting in math class, on his laptop. Clearly, he is not paying attention in this situation. However, he gets called on by his math teacher to do some problems. Since his math teacher did not expect much from Tudor, he only needs to do some simple addition problems. However, simple for you and I may not be simple for Tudor, so please help him!\n\n## Input Specification\n\nThe first line will contain an integer ~N~ (~1 \\le N \\le 100\\,000~), the number of addition problems Tudor needs to do. The next ~N~ lines will each contain two space-separated integers whose absolute value is less than ~1\\,000\\,000\\,000~, the two integers Tudor needs to add.\n\n## Output Specification\n\nOutput ~N~ lines of one integer each, the solutions to the addition problems in order.\n\n## Sample Input\n\n    2\n    1 1\n    -1 0\n\n## Sample Output\n\n    2\n    -1",
-            "group": 1,
-            "is_manually_managed": false,
-            "is_public": true,
-            "license": null,
-            "memory_limit": 65536,
-            "name": "A Plus B",
-            "og_image": "",
-            "partial": true,
-            "points": 5.0,
-            "short_circuit": false,
-            "summary": "",
-            "testers": [
-
-            ],
-            "time_limit": 2.0,
-            "types": [
-                1
-            ],
-            "user_count": 0
-        },
-        "model": "judge.problem",
-        "pk": 1
-    },
-    {
-        "model": "judge.blogpost",
-        "pk": 1,
-        "fields": {
-            "title": "Ch\u00e0o m\u1eebng b\u1ea1n \u0111\u1ebfn v\u1edbi CKTOJ",
-            "slug": "welcome-to-cktoj",
-            "visible": true,
-            "global_post": true,
-            "sticky": true,
-            "publish_on": "2017-12-02T05:00:00Z",
-            "content": "Ch\u00e0o m\u1eebng b\u1ea1n \u0111\u1ebfn v\u1edbi CKTOJ.",
-            "summary": "",
-            "og_image": "",
-            "authors": [
-                1
-            ]
-        }
-    },
-    {
-        "fields": {
-            "author": 1,
-            "body": "This is your first comment!",
-            "hidden": false,
-            "level": 0,
-            "lft": 1,
-            "page": "b:1",
-            "parent": null,
-            "rght": 2,
-            "score": 0,
-            "time": "2017-12-02T08:46:54.007Z",
-            "tree_id": 1
-        },
-        "model": "judge.comment",
-        "pk": 1
-    },
-    {
-        "fields": {
             "domain": "localhost:8081",
             "name": "CKTOJ: THPT Chuyen Nguyen Tat Thanh Online Judge"
         },
@@ -193,7 +108,7 @@
         "fields": {
             "url": "/about/",
             "title": "Th\u00f4ng tin",
-            "content": "test abcd",
+            "content": "CKTOJ: Chuy\u00ean Kon Tum Online Judge l\u00e0 h\u1ec7 th\u1ed1ng online judge ch\u00ednh th\u1ee9c c\u1ee7a Tr\u01b0\u1eddng THPT Chuy\u00ean Nguy\u1ec5n T\u1ea5t Th\u00e0nh - Kon Tum, \u0111\u01b0\u1ee3c x\u00e2y d\u1ef1ng d\u1ef1a tr\u00ean c\u00e1c d\u1ef1 \u00e1n m\u00e3 ngu\u1ed3n m\u1edf [DMOJ](https://dmoj.ca/) v\u00e0 [VNOJ](https://oj.vnoi.info/).\n\nCKTOJ \u0111\u01b0\u1ee3c t\u1ea1o ra v\u1edbi m\u1ee5c \u0111\u00edch x\u00e2y d\u1ef1ng m\u1ed9t m\u00f4i tr\u01b0\u1eddng luy\u1ec7n t\u1eadp v\u00e0 c\u1ea1nh tranh d\u00e0nh cho c\u1ed9ng \u0111\u1ed3ng Tin H\u1ecdc c\u1ee7a t\u1ec9nh Kon Tum.",
             "enable_comments": false,
             "template_name": "",
             "registration_required": false,
