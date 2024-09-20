@@ -11,28 +11,28 @@
     {% endif %}
     <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicons-->
-    <link rel="apple-touch-icon" sizes="57x57" href="https://raw.githubusercontent.com/CKTOJ/cktoj-docs/master/logo.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="https://raw.githubusercontent.com/CKTOJ/cktoj-docs/master/logo.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="https://raw.githubusercontent.com/CKTOJ/cktoj-docs/master/logo.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="https://raw.githubusercontent.com/CKTOJ/cktoj-docs/master/logo.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="https://raw.githubusercontent.com/CKTOJ/cktoj-docs/master/logo.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="https://raw.githubusercontent.com/CKTOJ/cktoj-docs/master/logo.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="https://raw.githubusercontent.com/CKTOJ/cktoj-docs/master/logo.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="https://raw.githubusercontent.com/CKTOJ/cktoj-docs/master/logo.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/CKTOJ/cktoj-docs/master/logo.png">
-    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/CKTOJ/cktoj-docs/master/logo.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/CKTOJ/cktoj-docs/master/logo.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/CKTOJ/cktoj-docs/master/logo.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/CKTOJ/cktoj-docs/master/logo.png" sizes="16x16">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://raw.githubusercontent.com/togethercpp/icons/refs/heads/main/logo.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://raw.githubusercontent.com/togethercpp/icons/refs/heads/main/logo.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://raw.githubusercontent.com/togethercpp/icons/refs/heads/main/logo.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://raw.githubusercontent.com/togethercpp/icons/refs/heads/main/logo.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://raw.githubusercontent.com/togethercpp/icons/refs/heads/main/logo.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://raw.githubusercontent.com/togethercpp/icons/refs/heads/main/logo.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://raw.githubusercontent.com/togethercpp/icons/refs/heads/main/logo.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://raw.githubusercontent.com/togethercpp/icons/refs/heads/main/logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/togethercpp/icons/refs/heads/main/logo.png">
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/togethercpp/icons/refs/heads/main/logo.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/togethercpp/icons/refs/heads/main/logo.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/togethercpp/icons/refs/heads/main/logo.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/togethercpp/icons/refs/heads/main/logo.png" sizes="16x16">
     <link rel="manifest" href="/manifest.json">
     <meta name="msapplication-TileColor" content="#231F20">
-    <meta name="msapplication-TileImage" content="/https://raw.githubusercontent.com/CKTOJ/cktoj-docs/master/logo.png">
+    <meta name="msapplication-TileImage" content="/https://raw.githubusercontent.com/togethercpp/icons/refs/heads/main/logo.png">
     {# Chrome 39 for Android colour #}
     <meta name="theme-color" content="#231F20">
     {% if og_image %}
         <meta property="og:image" content="{{ request.build_absolute_uri(og_image) }}">
     {% else %}
-        <meta property="og:image" content="{{ request.build_absolute_uri("https://raw.githubusercontent.com/CKTOJ/cktoj-docs/master/logo.png") }}">
+        <meta property="og:image" content="{{ request.build_absolute_uri("https://raw.githubusercontent.com/togethercpp/icons/refs/heads/main/logo.png") }}">
     {% endif %}
     {% block og_title %}{% endblock %}
     <meta property="og:site_name" content="{{ SITE_LONG_NAME }}">
@@ -361,7 +361,7 @@
         <span id="footer-content">
             <br>
             {{_('proudly powered by %(dmoj)s, %(vnoj)s', dmoj=safe('<a style="color: #808080" href="https://dmoj.ca"><b>DMOJ</b></a>'),vnoj=safe('<a style="color: #808080" href="https://oj.vnoi.info"><b>VNOJ</b></a>'))}} |
-            {{_('CKTOJ')}}
+            {{_('TCOJ')}}
             {% if misc_config.footer %}
                 {{ misc_config.footer|safe }} |
             {% endif %}
