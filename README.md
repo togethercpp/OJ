@@ -1,4 +1,4 @@
-# TCOJ: Together Cpp Online Judge [![AGPL License](https://img.shields.io/badge/license-AGPLv3.0-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
+# CKTOJ: THPT Chuyen Nguyen Tat Thanh Kon Tum Online Judge [![AGPL License](https://img.shields.io/badge/license-AGPLv3.0-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
 
 As a fork of [VNOJ](https://github.com/VNOI-Admin/OJ)
 

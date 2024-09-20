@@ -70,7 +70,6 @@ VNOJ_DISPLAY_RANKS = (
     ('user', _('Normal User')),
     ('banned', _('Banned User')),
     ('admin', _('Admin')),
-    ('daor', _('Bedao Team')),
     ('teacher', _('Teacher')),
 )
 
