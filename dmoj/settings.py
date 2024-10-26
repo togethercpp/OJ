@@ -114,6 +114,11 @@ VNOJ_ENABLE_ORGANIZATION_CREDIT_LIMITATION = False
 VNOJ_MONTHLY_FREE_CREDIT = 3 * 60 * 60
 VNOJ_PRICE_PER_HOUR = 50
 
+
+VNOJ_LONG_QUEUE_ALERT_THRESHOLD = 10
+
+CELERY_TIMEZONE = 'Asia/Ho_Chi_Minh'
+
 # Some problems have a lot of testcases, and each testcase
 # has about 5~6 fields, so we need to raise this
 DATA_UPLOAD_MAX_NUMBER_FIELDS = 3000
@@ -176,6 +181,8 @@ DISCORD_WEBHOOK = {
     'on_new_tag': None,
     'on_new_blogpost': None,
     'on_error': None,
+    'on_long_queue': None,
+    'queue_time_stats': None,
 }
 
 SITE_FULL_URL = None  # ie 'https://oj.vnoi.info', please remove the last / if needed
@@ -652,6 +659,9 @@ DATABASES = {
 }
 
 ENABLE_FTS = False
+
+# Balancer configuration
+BALANCER_JUDGE_ADDRESS = [('localhost', 8888)]
 
 # Bridged configuration
 BRIDGED_JUDGE_ADDRESS = [('localhost', 9999)]
